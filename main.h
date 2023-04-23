@@ -1,9 +1,31 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-#define BUFFSIZE 1024;
-#define INT_BUFF 20;
+#include <unistd.h>
+#include <stdarg.h>
+#include <stdlib.h>
+#include <string.h>
 
-int _printf(const char, ...);
+#define BUFFSIZE 1024
+#define TEMP 20
+
+/**
+ * struct func - To house format specifier and it's function
+ * @spec: the specifier char (c, s, i, d ....)
+ * @f: function to handle respective specifier
+ */
+typedef struct func
+{
+	char spec;
+	int (*f)(char *, va_list);
+} func;
+
+int _printf(const char *, ...);
+void _puts(char *);
+int (*get_func(char specifier))(char *, va_list);
+int str_func(char *, va_list);
+int char_func(char *, va_list);
+int pct_func(char *, va_list);
+int _strlen(char *);
 
 #endif /*MAIN_H*/
