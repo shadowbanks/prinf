@@ -17,7 +17,6 @@ int u_func(char *buffer, va_list ap)
 	if (digit == 0)
 	{
 		*buffer++ = '0';
-	}
 		len++;
 	}
 
@@ -35,10 +34,9 @@ int u_func(char *buffer, va_list ap)
 
 	while (digit)
 	{
-	buffer[len - 1] = '0' + (digit % 10);
-
-	digit /= 10;
-	len--;
+		buffer[len - 1] = '0' + (digit % 10);
+		digit /= 10;
+		len--;
 	}
 
 	buffer[len] = '\0';

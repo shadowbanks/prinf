@@ -23,6 +23,7 @@ int (*get_func(char specifier))(char *, va_list)
 		{'x', x_func},
 		{'X', X_func},
 		{'p', ptr_func},
+		{'R', rot13_func},
 		{'\0', NULL}
 	};
 
