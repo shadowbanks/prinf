@@ -15,9 +15,13 @@ int (*get_func(char specifier))(char *, va_list)
 		{'c', char_func},
 		{'s', str_func},
 		{'%', pct_func},
-		{'d', int_func},
-		{'i', int_func},
+		{'d', ints_func},
+		{'i', ints_func},
 		{'b', b_func},
+		{'u', u_func},
+		{'o', o_func},
+		{'x', x_func},
+		{'X', X_func},
 		{'\0', NULL}
 	};
 
