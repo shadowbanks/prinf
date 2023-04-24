@@ -5,6 +5,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 #define BUFFSIZE 1024
 #define TEMP 20
@@ -28,4 +29,8 @@ int char_func(char *, va_list);
 int pct_func(char *, va_list);
 int _strlen(char *);
 int int_func(char *, va_list);
+void rev_string(char *);
+int base_conv(char *, long long, int);
+int b_func(char *, va_list);
+
 #endif /*MAIN_H*/
