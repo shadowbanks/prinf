@@ -10,57 +10,31 @@ include "main.h"
 
 int x_func(char *buffer, va_list ap)
 {
-	int digit = va_arg(ap, int);
-	int len = 0;
-	int temp;
+	int digit = va_arg(ap, int), len = 0, temp, remainder;
+	char c;
 
 	if (digit == 0)
 	{
 		*buffer++ = '0';
 		len++;
 	}
-
-	else
+	else if (digit < 0)
 	{
-	if (digit < 0)
-	{
-		*buffer++ = '-';
-		digit = -digit;
+		*buffer++ = '-', digit = -digit;
 		len++;
 	}
-
 	temp = digit;
-
 	while (temp)
 	{
-
-		temp /= 16;
-		len++;
+		temp /= 16, len++;
 	}
-	}
-
 	while (digit)
 	{
-		remainder = digit % 16;
-		char c;
-
-	if (remainder < 10)
-	{
-		c = '0' + remainder;
+	remainder = digit % 16;
+c = (remainder < 10) ? ('0' + remainder) : c = 'a' + (remainder - 10);
+		buffer[--len] = c;
+		digit /= 16;
 	}
-
-	else
-	{
-		c = 'a' + (remainder - 10);
-	}
-
-	*buffer++ = c;
-	digit /= 16;
-	len--;
-	}
-
-
 	*buffer = '\0';
-
-	return (len);
+		return (len);
 }
