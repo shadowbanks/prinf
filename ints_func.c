@@ -9,7 +9,7 @@
  */
 
 
-int int_func(char *buffer, va_list ap)
+int ints_func(char *buffer, va_list ap)
 {
 	int digit = va_arg(ap, int);
 	int len = 0;
