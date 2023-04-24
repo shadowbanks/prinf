@@ -18,6 +18,7 @@ int (*get_func(char specifier))(char *, va_list)
 		{'d', int_func},
 		{'i', int_func},
 		{'b', b_func},
+		{'p', ptr_func},
 		{'\0', NULL}
 	};
 

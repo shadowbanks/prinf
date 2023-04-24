@@ -26,7 +26,7 @@ int base_conv(char *buffer, long long num, int base)
 		digit = num % base;
 		if (digit > 9)
 		{
-			*temp++ = digit + 'A' - 10;
+			*temp++ = digit + 'a' - 10;
 			len++;
 		}
 		else
