@@ -27,5 +27,5 @@ int str_func(char *, va_list);
 int char_func(char *, va_list);
 int pct_func(char *, va_list);
 int _strlen(char *);
-
+int int_func(char *, va_list);
 #endif /*MAIN_H*/
