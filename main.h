@@ -29,10 +29,14 @@ int str_func(char *, va_list);
 int char_func(char *, va_list);
 int pct_func(char *, va_list);
 int _strlen(char *);
-int int_func(char *, va_list);
+int ints_func(char *, va_list);
 void rev_string(char *);
 int base_conv(char *, long long, int);
 int b_func(char *, va_list);
+int u_func(char *, va_list)
+int o_func(char *, va_list)
+int x_func(char *, va_list)
+int X_func(char *, va_list)
 int ptr_func(char *, va_list);
 char *_strcpy(char *, char *);
 

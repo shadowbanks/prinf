@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int_func - a function to handle "%i" and "%d"
+ * o_func - a function to handle "%o" specifier
  * @buffer: location to write the formated output to
  * @ap: var_list. containing the integer to be format
  *
@@ -9,7 +9,7 @@
  */
 
 
-int ints_func(char *buffer, va_list ap)
+int o_func(char *buffer, va_list ap)
 {
 	int digit = va_arg(ap, int);
 	int len = 0;
@@ -17,11 +17,14 @@ int ints_func(char *buffer, va_list ap)
 
 	if (digit == 0)
 	{
+
 		*buffer++ = '0';
 		len++;
 	}
+
 	else
 	{
+
 	if (digit < 0)
 	{
 		*buffer++ = '-';
@@ -34,17 +37,19 @@ int ints_func(char *buffer, va_list ap)
 
 	while (temp)
 	{
-		temp /= 10;
+		temp /= 8;
 		len++;
 	}
 
 	while (digit)
 	{
-		buffer[len - 1] = '0' + (digit % 10);
-		digit /= 10;
-		len--;
 
+		buffer[len - 1] = '0' + (digit % 8);
+		digit /= 8;
+		len--;
 	}
+
+	buffer[len] = '\0';
 
 	return (len);
 }

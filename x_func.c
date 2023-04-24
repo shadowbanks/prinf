@@ -1,15 +1,14 @@
-#include "main.h"
+include "main.h"
 
 /**
- * int_func - a function to handle "%i" and "%d"
+ * x_func - a function to handle "%x" specifier
  * @buffer: location to write the formated output to
  * @ap: var_list. containing the integer to be format
  *
  * Return: length of resulting string
  */
 
-
-int ints_func(char *buffer, va_list ap)
+int x_func(char *buffer, va_list ap)
 {
 	int digit = va_arg(ap, int);
 	int len = 0;
@@ -20,6 +19,7 @@ int ints_func(char *buffer, va_list ap)
 		*buffer++ = '0';
 		len++;
 	}
+
 	else
 	{
 	if (digit < 0)
@@ -28,23 +28,39 @@ int ints_func(char *buffer, va_list ap)
 		digit = -digit;
 		len++;
 	}
-	}
 
 	temp = digit;
 
 	while (temp)
 	{
-		temp /= 10;
+
+		temp /= 16;
 		len++;
+	}
 	}
 
 	while (digit)
 	{
-		buffer[len - 1] = '0' + (digit % 10);
-		digit /= 10;
-		len--;
+		remainder = digit % 16;
+		char c;
 
+	if (remainder < 10)
+	{
+		c = '0' + remainder;
 	}
+
+	else
+	{
+		c = 'a' + (remainder - 10);
+	}
+
+	*buffer++ = c;
+	digit /= 16;
+	len--;
+	}
+
+
+	*buffer = '\0';
 
 	return (len);
 }
