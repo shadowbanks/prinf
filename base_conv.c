@@ -9,7 +9,7 @@
  * Return: lenght of converted number (now in string)
  */
 
-int base_conv(char *buffer, long long num, int base)
+int base_conv(char *buffer, long num, int base)
 {
 	char *temp;
 	int digit, sign = 0, len = 0;

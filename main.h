@@ -31,7 +31,7 @@ int pct_func(char *, va_list);
 int _strlen(char *);
 int ints_func(char *, va_list);
 void rev_string(char *);
-int base_conv(char *, long long, int);
+int base_conv(char *, long, int);
 int b_func(char *, va_list);
 int u_func(char *, va_list);
 int o_func(char *, va_list);
