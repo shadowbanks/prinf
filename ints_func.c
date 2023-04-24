@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int_func - a function to handle "%i" and "%d"
+ * ints_func - a function to handle "%i" and "%d"
  * @buffer: location to write the formated output to
  * @ap: var_list. containing the integer to be format
  *

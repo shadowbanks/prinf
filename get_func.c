@@ -22,7 +22,7 @@ int (*get_func(char specifier))(char *, va_list)
 		{'o', o_func},
 		{'x', x_func},
 		{'X', X_func},
-    {'p', ptr_func},
+		{'p', ptr_func},
 		{'\0', NULL}
 	};
 
