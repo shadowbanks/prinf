@@ -29,7 +29,6 @@ int o_func(char *buffer, va_list ap)
 		digit /= 8;
 		len--;
 	}
-	buffer[len] = '\0';
 
 	return (len);
 }
