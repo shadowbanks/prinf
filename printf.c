@@ -13,6 +13,9 @@ int _printf(const char *format, ...)
 	va_list ap;
 	char *output, *buffer;
 
+	if (format == NULL)
+		return (-1);
+
 	output = malloc(BUFFSIZE * sizeof(char));
 
 	if (output == NULL)
@@ -28,7 +31,10 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			/*skip = (*get_func(*format++))(buffer, ap);*/
-			skip = call_func(*format++, buffer, ap);
+			if (*format == '\0')
+				skip = 0;
+			else
+				skip = call_func(*format++, buffer, ap);
 			buffer = buffer + skip;
 		}
 		else
