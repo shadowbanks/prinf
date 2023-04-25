@@ -42,6 +42,6 @@ char *_strcpy(char *, char *);
 int string_func(char *, va_list);
 int revs_string(char *, va_list);
 int rot13_func(char *, va_list);
-int dec_func(char *, va_list);
+
 
 #endif /*MAIN_H*/
