@@ -31,7 +31,7 @@ int X_func(char *buffer, va_list ap)
 	while (digit)
 	{
 	remainder = digit % 16;
-c = (remainder < 10) ? ('0' + remainder) : c = 'A' + (remainder - 10);
+c = (remainder < 10) ? ('0' + remainder) :('A' + (remainder - 10));
 		buffer[--len] = c;
 		digit /= 16;
 	}
