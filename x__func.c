@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* x_func - a function to handle "%x" specifier
+* x__func - a function to handle "%x" specifier
 * @buffer: location to write the formated output to
 * @ap: var_list. containing the integer to be format
 *

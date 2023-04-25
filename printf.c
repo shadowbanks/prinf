@@ -27,7 +27,8 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			format++;
-			skip = (*get_func(*format++))(buffer, ap);
+			/*skip = (*get_func(*format++))(buffer, ap);*/
+			skip = call_func(*format++, buffer, ap);
 			buffer = buffer + skip;
 		}
 		else

@@ -42,6 +42,7 @@ char *_strcpy(char *, char *);
 int string_func(char *, va_list);
 int revs_string(char *, va_list);
 int rot13_func(char *, va_list);
+int call_func(char, char *, va_list);
 int hash_func(char *, va_list);
 int plus_func(char *, va_list);
 int space_func(char *, va_list);
