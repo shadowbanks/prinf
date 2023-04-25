@@ -1,4 +1,4 @@
-include "main.h"
+#include "main.h"
 
 /**
  * X_func - a function to handle "%X" specifier
@@ -8,8 +8,8 @@ include "main.h"
  * Return: length of resulting string
 */
 
-	int X_func(char *buffer, va_list ap)
-	{
+int X_func(char *buffer, va_list ap)
+{
 	int digit = va_arg(ap, int), len = 0, temp, remainder;
 	char c;
 
@@ -20,13 +20,13 @@ include "main.h"
 	}
 	else if (digit < 0)
 	{
-	*buffer++ = '-', digit = -digit;
-	len++;
+		*buffer++ = '-', digit = -digit;
+		len++;
 	}
 	temp = digit;
 	while (temp)
 	{
-	temp /= 16, len++;
+		temp /= 16, len++;
 	}
 	while (digit)
 	{
@@ -36,5 +36,5 @@ c = (remainder < 10) ? ('0' + remainder) : c = 'A' + (remainder - 10);
 		digit /= 16;
 	}
 	*buffer = '\0';
-		return (len);
+	return (len);
 }

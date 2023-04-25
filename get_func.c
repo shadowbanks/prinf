@@ -25,6 +25,7 @@ int (*get_func(char specifier))(char *, va_list)
 		{'p', ptr_func},
 		{'S', String_func},
 		{'r', revs_string},
+		{'R', rot13_func},
 		{'\0', NULL}
 	};
 
