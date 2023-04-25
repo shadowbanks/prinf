@@ -39,6 +39,6 @@ int ints_func(char *buffer, va_list ap)
 		len--;
 
 	}
-
+	*buffer = '\0';
 	return (len);
 }
