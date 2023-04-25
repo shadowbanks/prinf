@@ -20,14 +20,11 @@ int ints_func(char *buffer, va_list ap)
 		*buffer++ = '0';
 		len++;
 	}
-	else
-	{
-	if (digit < 0)
+	else if (digit < 0)
 	{
 		*buffer++ = '-';
 		digit = -digit;
 		len++;
-	}
 	}
 	temp = digit;
 	while (temp)

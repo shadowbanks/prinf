@@ -9,19 +9,14 @@
 
 int o_func(char *buffer, va_list ap)
 {
-	int digit = va_arg(ap, int), len = 0, temp;
+	unsigned long int digit = va_arg(ap, int), len = 0, temp;
 
 	if (digit == 0)
 	{
 		*buffer++ = '0';
 		len++;
 	}
-	else if (digit < 0)
-	{
-		*buffer++ = '-';
-		digit = -digit;
-		len++;
-	}
+
 	temp = digit;
 	while (temp)
 	{
@@ -34,7 +29,6 @@ int o_func(char *buffer, va_list ap)
 		digit /= 8;
 		len--;
 	}
-	buffer[len] = '\0';
 
 	return (len);
 }
