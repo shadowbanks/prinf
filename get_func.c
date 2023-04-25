@@ -26,6 +26,10 @@ int (*get_func(char specifier))(char *, va_list)
 		{'S', string_func},
 		{'r', revs_string},
 		{'R', rot13_func},
+		{'#', hash_func},
+		{'0', zero_func},
+		{' ', space_func},
+		{'+', plus_func},
 		{'\0', NULL}
 	};
 

@@ -10,4 +10,4 @@
 int o_func(char *buffer, va_list ap)
 {
 	return (base_conv(buffer, va_arg(ap, unsigned int), 8));
-}     
+}
