@@ -35,6 +35,6 @@ int x_func(char *buffer, va_list ap)
 		digit /= 16;
 		len--;
 	}
-	}
+	*buffer = '\0';
 	return (len);
 }
