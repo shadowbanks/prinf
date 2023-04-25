@@ -13,7 +13,7 @@ int hash_func(char *buffer, va_list ap)
 		unsigned int digit = va_arg(ap, unsigned int);
 		int len = 0, i;
 		int hex_len;
-		char hex_str;
+		char hex_str[16];
 
 	if (digit == 0)
 	{
@@ -22,8 +22,6 @@ int hash_func(char *buffer, va_list ap)
 	}
 	else
 	{
-		hex_str[16];
-
 		hex_len = base_conv(hex_str, digit, 16);
 
 		*buffer++ = '0';

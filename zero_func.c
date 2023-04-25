@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * zero_func - a function to handle "%0" format specifier for integers
  * @buffer: location to write the formatted output to

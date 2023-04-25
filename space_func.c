@@ -11,7 +11,7 @@
 int space_func(char *buffer, va_list ap)
 {
 	int digit = va_arg(ap, int);
-	int len = 0;
+	int len = 0, temp;
 
 	if (digit < 0)
 	{
