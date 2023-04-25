@@ -10,31 +10,31 @@
 
 int x_func(char *buffer, va_list ap)
 {
-	int digit = va_arg(ap, int), len = 0, temp, remainder;
-	char c;
+	unsigned int digit = va_arg(ap, unsigned int);
+	int len = 0;
+	int temp;
+	char hex_digits[] = "0123456789abcdef";
 
 	if (digit == 0)
 	{
 		*buffer++ = '0';
 		len++;
 	}
-	else if (digit < 0)
+	else
 	{
-		*buffer++ = '-', digit = -digit;
-		len++;
-	}
 	temp = digit;
 	while (temp)
 	{
-		temp /= 16, len++;
+		temp /= 16;
+		len++;
 	}
+
 	while (digit)
 	{
-		remainder = digit % 16;
-		c = (remainder < 10) ? ('0' + remainder) : 'a' + (remainder - 10);
-		buffer[--len] = c;
+		buffer[len - 1] = hex_digits[digit % 16];
 		digit /= 16;
+		len--;
 	}
-	*buffer = '\0';
+	}
 	return (len);
 }
