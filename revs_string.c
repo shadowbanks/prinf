@@ -11,7 +11,7 @@
 int revs_string(char *buffer, va_list ap)
 {
 	char *str = va_arg(ap, char*);
-	int len = 0;
+	int len = 0, i;
 	int str_len = 0;
 	char c;
 
@@ -24,7 +24,7 @@ int revs_string(char *buffer, va_list ap)
 	{
 		str_len++;
 	}
-	for (int i = 0; i < str_len / 2; i++)
+	for (i = 0; i < str_len / 2; i++)
 	{
 		c = str[i];
 		str[i] = str[str_len - 1 - i];
