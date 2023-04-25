@@ -36,6 +36,6 @@ c = (remainder < 10) ? ('0' + remainder) : c = 'A' + (remainder - 10);
 		digit /= 16;
 	}
 	*buffer = '\0';
-	
+
 	return (len);
 }
