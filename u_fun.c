@@ -10,36 +10,5 @@
 
 int u_func(char *buffer, va_list ap)
 {
-	unsigned int digit = va_arg(ap, int);
-	int len = 0;
-	int temp;
-
-	if (digit == 0)
-	{
-		*buffer++ = '0';
-		len++;
-	}
-
-	else
-	{
-		temp = digit;
-
-	while (temp)
-	{
-		temp /= 10;
-		len++;
-	}
-
-	}
-
-	while (digit)
-	{
-		buffer[len - 1] = '0' + (digit % 10);
-		digit /= 10;
-		len--;
-	}
-
-	buffer[len] = '\0';
-
-	return (len);
+	return (base_conv(buffer, va_arg(ap, unsigned int), 10));
 }

@@ -10,31 +10,16 @@
 
 int X_func(char *buffer, va_list ap)
 {
-	unsigned int digit = va_arg(ap, unsigned int);
-	int len = 0;
-	int temp;
-	char hex_digits[] = "0123456789ABCDEF";
+	int i = 0, len;
 
-	if (digit == 0)
+	len = base_conv(buffer, va_arg(ap, unsigned int), 16);
+	
+	while (i < len)
 	{
-		*buffer++ = '0';
-		len++;
-	}
-	else
-	{
-	temp = digit;
-	while (temp)
-	{
-		temp /= 16;
-		len++;
-	}
+		if (buffer[i] >= 'a' && buffer[i] <= 'f')
+			buffer[i] = buffer[i] - 32;
 
-	while (digit)
-	{
-		buffer[len - 1] = hex_digits[digit % 16];
-		digit /= 16;
-		len--;
-	}
+		i++; 
 	}
 	return (len);
 }

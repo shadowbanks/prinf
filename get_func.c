@@ -20,7 +20,7 @@ int (*get_func(char specifier))(char *, va_list)
 		{'b', b_func},
 		{'u', u_func},
 		{'o', o_func},
-		{'x', x_func},
+		{'x', x__func},
 		{'X', X_func},
 		{'p', ptr_func},
 		{'S', string_func},

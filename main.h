@@ -35,7 +35,7 @@ int base_conv(char *, long, int);
 int b_func(char *, va_list);
 int u_func(char *, va_list);
 int o_func(char *, va_list);
-int x_func(char *, va_list);
+int x__func(char *, va_list);
 int X_func(char *, va_list);
 int ptr_func(char *, va_list);
 char *_strcpy(char *, char *);

@@ -9,26 +9,5 @@
 
 int o_func(char *buffer, va_list ap)
 {
-	unsigned long int digit = va_arg(ap, int), len = 0, temp;
-
-	if (digit == 0)
-	{
-		*buffer++ = '0';
-		len++;
-	}
-
-	temp = digit;
-	while (temp)
-	{
-		temp /= 8;
-		len++;
-	}
-	while (digit)
-	{
-		buffer[len - 1] = '0' + (digit % 8);
-		digit /= 8;
-		len--;
-	}
-
-	return (len);
-}
+	return (base_conv(buffer, va_arg(ap, unsigned int), 8));
+}     
