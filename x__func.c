@@ -8,7 +8,7 @@
 * Return: length of resulting string
 */
 
- int x__func(char *buffer, va_list ap)
+int x__func(char *buffer, va_list ap)
 {
 	return (base_conv(buffer, va_arg(ap, unsigned int), 16));
 }
