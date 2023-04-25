@@ -31,7 +31,7 @@ include "main.h"
 	while (digit)
 	{
 	remainder = digit % 16;
-c = (remainder < 10) ? ('0' + remainder) : c = 'a' + (remainder - 10);	
+c = (remainder < 10) ? ('0' + remainder) : c = 'A' + (remainder - 10);	
 		buffer[--len] = c;
 		digit /= 16;
 	}
