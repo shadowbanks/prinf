@@ -9,7 +9,7 @@
 
 int o_func(char *buffer, va_list ap)
 {
-	int digit = va_arg(ap, int), len = 0, temp;
+	unsigned long int digit = va_arg(ap, int), len = 0, temp;
 
 	if (digit == 0)
 	{
