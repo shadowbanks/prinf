@@ -10,9 +10,18 @@
 
 int str_func(char *buffer, va_list ap)
 {
-	int len = 0, i = 0;
+	int len = 0, i = 0, j = 0;
 	char *str = va_arg(ap, char *);
+	char null[6] = {"(null)"};
 
+	if (str == NULL)
+	{
+		while (j < 6)
+		{
+			*buffer++ = null[j++];
+		}
+		return (6);
+	}
 	while (str[i] != '\0')
 	{
 		len++;
