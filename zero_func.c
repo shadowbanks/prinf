@@ -17,7 +17,7 @@ int zero_func(char *buffer, va_list ap)
 		digit = -digit;
 	len++;
 	}
-    
+
 	else if (digit > 0)
 	{
 		*buffer++ = '0';
@@ -27,11 +27,11 @@ int zero_func(char *buffer, va_list ap)
 	{
 		*buffer++ = '0';
 		len++;
-		return len;
+		return (len);
 	}
 
-    	temp = digit;
-	
+	temp = digit;
+
 	while (temp)
 	{
 		temp /= 10;
@@ -46,5 +46,5 @@ int zero_func(char *buffer, va_list ap)
 	}
 	*buffer++ = '0' + digit % 10;
 
-	return len;
+	return (len);
 }
