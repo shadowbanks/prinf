@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ints_func - a function to handle "%i"
+ * dec_func - a function to handle "%d"
  * @buffer: location to write the formated output to
  * @ap: var_list. containing the integer to be format
  *
@@ -9,7 +9,7 @@
  */
 
 
-int ints_func(char *buffer, va_list ap)
+int dec_func(char *buffer, va_list ap)
 {
 	int digit = va_arg(ap, int);
 	int len = 0;

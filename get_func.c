@@ -15,7 +15,7 @@ int (*get_func(char specifier))(char *, va_list)
 		{'c', char_func},
 		{'s', str_func},
 		{'%', pct_func},
-		{'d', ints_func},
+		{'d', dec_func},
 		{'i', ints_func},
 		{'b', b_func},
 		{'u', u_func},
