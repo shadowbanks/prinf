@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * ints_func - a function to handle "%i"
+ * ints_func - a function to handle "%i" and "%d"
  * @buffer: location to write the formated output to
  * @ap: var_list. containing the integer to be format
  *
@@ -29,15 +29,12 @@ int ints_func(char *buffer, va_list ap)
 		len++;
 	}
 	}
-
 	temp = digit;
-
 	while (temp)
 	{
 		temp /= 10;
 		len++;
 	}
-
 	while (digit)
 	{
 		buffer[len - 1] = '0' + (digit % 10);
