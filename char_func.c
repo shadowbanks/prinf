@@ -10,7 +10,12 @@
 
 int char_func(char *buffer, va_list ap)
 {
-	*buffer = va_arg(ap, int);
+	char c = va_arg(ap, int);
+
+	if (c == '\0')
+		*buffer++ = ' ';
+	else
+		*buffer++ = c;
 
 	return (1);
 }

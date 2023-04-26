@@ -8,7 +8,7 @@
 #include <limits.h>
 #include <stdint.h>
 
-#define BUFFSIZE 1024
+#define BUFFSIZE 2048
 #define TEMP 20
 
 /**
