@@ -18,7 +18,7 @@ int call_func(char format, char *buffer, va_list ap)
 	if (func_ptr == NULL)
 	{
 		*buffer++ = '%';
-		return (-1);
+		return (1);
 	}
 
 	skip = func_ptr(buffer, ap);
