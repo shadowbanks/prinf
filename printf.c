@@ -9,7 +9,7 @@
 
 int _printf(const char *format, ...)
 {
-	int skip, len;
+	int skip;
 	va_list ap;
 	char *output, *buffer;
 
@@ -20,21 +20,23 @@ int _printf(const char *format, ...)
 
 	if (output == NULL)
 		return (-1);
-
 	buffer = output;
-
 	va_start(ap, format);
+
 	while (*format)
 	{
 		skip = 0;
 		if (*format == '%')
 		{
 			format++;
-			/*skip = (*get_func(*format++))(buffer, ap);*/
 			if (*format == '\0')
 				skip = 0;
 			else
-				skip = call_func(*format++, buffer, ap);
+			{
+				skip = call_func(*format, buffer, ap);
+				skip = (skip == -1) ? (buffer[1] = *format, 2) : 1;
+				format++;
+			}
 			buffer = buffer + skip;
 		}
 		else
@@ -44,9 +46,7 @@ int _printf(const char *format, ...)
 
 	*buffer = '\0';
 	va_end(ap);
-
-	len =  _strlen(output);
-	write(1, output, len);
+	write(1, output, _strlen(output));
 	free(output);
 	return (len);
 }
