@@ -11,30 +11,24 @@
 int revs_string(char *buffer, va_list ap)
 {
 	char *str = va_arg(ap, char*);
-	int len = 0, i;
-	int str_len = 0;
-	char c;
+	int len = 0, i = 0, j = 0;
+	char null[6] = {"null"};
 
 	if (str == NULL)
 	{
-	str = "(null)";
+		while (j < 6)
+		{
+			*buffer++ = null[j++];
+		}
+		return (6);
 	}
-
-	while (str[str_len])
+	while (str[i] != '\0')
 	{
-		str_len++;
-	}
-	for (i = 0; i < str_len / 2; i++)
-	{
-		c = str[i];
-		str[i] = str[str_len - 1 - i];
-		str[str_len - 1 - i] = c;
-	}
-	while (*str)
-	{
-		*buffer++ = *str++;
 		len++;
+		buffer[i] = str[i];
+		i++;
 	}
-	*buffer = '\0';
-return (len);
+	rev_string(buffer);
+
+	return (len);
 }
