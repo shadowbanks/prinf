@@ -17,6 +17,15 @@ int ptr_func(char *buffer, va_list ap)
 
 	size = base_conv(buffer, ptr, 16);
 
+	if (!((void *)ptr))
+	{
+		*buffer++ = '(';
+		*buffer++ = 'n';
+		*buffer++ = 'i';
+		*buffer++ = 'l';
+		*buffer++ = ')';
+		return (5);
+	}
 
 	temp = malloc(sizeof(char) * size + 2);
 
