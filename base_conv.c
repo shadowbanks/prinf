@@ -15,6 +15,11 @@ int base_conv(char *buffer, long num, int base)
 	int digit, sign = 0, len = 0;
 
 	temp = buffer;
+	if (num == 0)
+	{
+		*temp++ = '0';
+		return (1);
+	}
 
 	if (num < 0)
 	{
